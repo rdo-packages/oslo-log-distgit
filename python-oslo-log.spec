@@ -3,7 +3,7 @@
 
 Name:           python-oslo-log
 Version:        1.0.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        OpenStack Oslo Log library
 
 License:        ASL 2.0
@@ -73,6 +73,9 @@ rm -rf html/.{doctrees,buildinfo}
 %license LICENSE
 
 %changelog
+* Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
+
 * Thu Mar 26 2015 Haïkel Guémar <hguemar@fedoraproject.org> - 1.0.0-1
 - Upstream 1.0.0
 - Based on Derek Higgins spec from Delorean
