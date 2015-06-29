@@ -43,8 +43,6 @@ Documentation for the Oslo Log handling library.
 
 %prep
 %setup -q -n %{pypi_name}-%{version}
-# Remove bundled egg-info
-rm -rf %{pypi_name}.egg-info
 # Let RPM handle the dependencies
 rm -f requirements.txt
 
@@ -63,8 +61,8 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %files
-%doc README.rst
-%license LICENSE ChangeLog AUTHORS
+%doc README.rst ChangeLog AUTHORS
+%license LICENSE
 %{python2_sitelib}/oslo_log
 %{python2_sitelib}/*.egg-info
 
