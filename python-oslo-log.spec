@@ -2,8 +2,8 @@
 %global pypi_name oslo.log
 
 Name:           python-oslo-log
-Version:        1.0.0
-Release:        2%{?dist}
+Version:        1.5.0
+Release:        1%{?dist}
 Summary:        OpenStack Oslo Log library
 
 License:        ASL 2.0
@@ -22,6 +22,7 @@ Requires:       python-oslo-context
 Requires:       python-oslo-i18n
 Requires:       python-oslo-utils
 Requires:       python-oslo-serialization
+Requires:       python-debtcollector
 
 %description
 OpenStack logging configuration library provides standardized configuration
@@ -71,6 +72,9 @@ rm -rf html/.{doctrees,buildinfo}
 %license LICENSE
 
 %changelog
+* Mon Jun 29 2015 Alan Pevec <alan.pevec@redhat.com> 1.5.0-1
+- Update to upstream 1.5.0
+
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
