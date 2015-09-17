@@ -2,7 +2,7 @@
 %global pypi_name oslo.log
 
 Name:           python-oslo-log
-Version:        1.10.0
+Version:        1.11.0
 Release:        1%{?dist}
 Summary:        OpenStack Oslo Log library
 
@@ -72,6 +72,9 @@ rm -rf html/.{doctrees,buildinfo}
 %license LICENSE
 
 %changelog
+* Fri Sep 18 2015 Alan Pevec <alan.pevec@redhat.com> 1.11.0-1
+- Update to upstream 1.11.0
+
 * Thu Sep 03 2015 Alan Pevec <alan.pevec@redhat.com> 1.10.0-1
 - Update to upstream 1.10.0
 
