@@ -1,5 +1,5 @@
-# UUID          Group Name
-6ddfecad023c6f4fa3ac8c4d2583c502ea675a73 	Non-Interactive Users
-8c0c68952e6be6d7a7ffd25d7eb661c41d2dc2cc       	oslo-log-distgit-core
-15d170b032dd50c66c20f700b3f3ec75c8eea175        	oslo-log-distgit-ptl
-global:Registered-Users		Registered Users
+# UUID                                  	Group Name
+#
+15d170b032dd50c66c20f700b3f3ec75c8eea175	openstack/oslo-log-distgit-ptl
+8c0c68952e6be6d7a7ffd25d7eb661c41d2dc2cc	oslo-log-distgit-core
+global:Registered-Users                 	Registered Users
