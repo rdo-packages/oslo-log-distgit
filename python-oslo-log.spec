@@ -9,7 +9,7 @@
 
 Name:           python-oslo-log
 Version:        3.2.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        OpenStack Oslo Log library
 
 License:        ASL 2.0
@@ -77,6 +77,23 @@ Requires:       python-testtools
 
 %description -n python2-%{pkg_name}-tests
 Tests for the Oslo Log handling library.
+
+%if 0%{?with_python3}
+%package -n python3-%{pkg_name}-tests
+Summary:    Tests for the Oslo Log handling library
+
+Requires:       python3-%{pkg_name} = %{version}-%{release}
+Requires:       python3-mock
+Requires:       python3-oslotest
+Requires:       python3-oslo-config
+Requires:       python3-subunit
+Requires:       python3-testrepository
+Requires:       python3-testscenarios
+Requires:       python3-testtools
+
+%description -n python3-%{pkg_name}-tests
+Tests for the Oslo Log handling library.
+%endif
 
 %if 0%{?with_python3}
 %package -n python3-%{pkg_name}
@@ -171,7 +188,16 @@ rm -rf .testrepository
 %exclude %{python3_sitelib}/oslo_log/tests
 %endif
 
+%if 0%{?with_python3}
+%files -n python3-%{pkg_name}-tests
+%{python3_sitelib}/oslo_log/tests
+%endif
+
+
 %changelog
-* Tue Mar 22 2016 Haikel Guemar <hguemar@fedoraproject.org> 3.2.0-
+* Wed Jun 01 2016 Charalampos Stratakis <cstratak@redhat.com> 3.2.0-2
+- Provide a python 3 tests subpackage
+
+* Tue Mar 22 2016 Haikel Guemar <hguemar@fedoraproject.org> 3.2.0-1
 - Update to 3.2.0
 
