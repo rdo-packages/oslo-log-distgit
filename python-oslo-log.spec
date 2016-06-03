@@ -82,6 +82,23 @@ Requires:       python-testtools
 Tests for the Oslo Log handling library.
 
 %if 0%{?with_python3}
+%package -n python3-%{pkg_name}-tests
+Summary:    Tests for the Oslo Log handling library
+
+Requires:       python3-%{pkg_name} = %{version}-%{release}
+Requires:       python3-mock
+Requires:       python3-oslotest
+Requires:       python3-oslo-config
+Requires:       python3-subunit
+Requires:       python3-testrepository
+Requires:       python3-testscenarios
+Requires:       python3-testtools
+
+%description -n python3-%{pkg_name}-tests
+Tests for the Oslo Log handling library.
+%endif
+
+%if 0%{?with_python3}
 %package -n python3-%{pkg_name}
 Summary:        OpenStack Oslo Log library
 %{?python_provide:%python_provide python3-%{pkg_name}}
@@ -196,5 +213,11 @@ rm -rf .testrepository
 %{python3_sitelib}/*.egg-info
 %exclude %{python3_sitelib}/oslo_log/tests
 %endif
+
+%if 0%{?with_python3}
+%files -n python3-%{pkg_name}-tests
+%{python3_sitelib}/oslo_log/tests
+%endif
+
 
 %changelog
