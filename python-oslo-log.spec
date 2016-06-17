@@ -34,6 +34,8 @@ BuildRequires:  python-testrepository
 BuildRequires:  python-testscenarios
 BuildRequires:  python-testtools
 BuildRequires:  python-inotify
+# Required to compile translation files
+BuildRequires:  python-babel
 
 Requires:       python-babel
 Requires:       python-dateutil
@@ -45,6 +47,7 @@ Requires:       python-oslo-utils
 Requires:       python-oslo-serialization
 Requires:       python-debtcollector
 Requires:       python-inotify
+Requires:       python-%{pkg_name}-lang >= %{version}-%{release}
 
 %description -n python2-%{pkg_name}
 OpenStack logging configuration library provides standardized configuration
@@ -107,6 +110,7 @@ Requires:       python3-oslo-utils
 Requires:       python3-oslo-serialization
 Requires:       python3-debtcollector
 Requires:       python3-inotify
+Requires:       python-%{pkg_name}-lang >= %{version}-%{release}
 
 %description -n python3-%{pkg_name}
 Oslo concurrency library has utilities for safely running multi-thread,
@@ -118,6 +122,12 @@ external processes.
 OpenStack logging configuration library provides standardized configuration
 for all openstack projects. It also provides custom formatters, handlers and
 support for context specific logging (like resource id’s etc).
+
+%package  -n python-%{pkg_name}-lang
+Summary:   Translation files for Oslo log library
+
+%description -n python-%{pkg_name}-lang
+Translation files for Oslo log library
 
 %prep
 %setup -q -n %{pypi_name}-%{upstream_version}
@@ -134,12 +144,26 @@ rm -rf {test-,}requirements.txt
 PYTHONPATH=. sphinx-build doc/source html
 # remove the sphinx-build leftovers
 rm -rf html/.{doctrees,buildinfo}
+# Generate i18n files
+%{__python2} setup.py compile_catalog -d build/lib/oslo_log/locale
 
 %install
 %py2_install
 %if 0%{?with_python3}
 %py3_install
 %endif
+
+# Install i18n .mo files (.po and .pot are not required)
+install -d -m 755 %{buildroot}%{_datadir}
+rm -f %{buildroot}%{python2_sitelib}/oslo_log/locale/*/LC_*/oslo_log*po
+rm -f %{buildroot}%{python2_sitelib}/oslo_log/locale/*pot
+mv %{buildroot}%{python2_sitelib}/oslo_log/locale %{buildroot}%{_datadir}/locale
+%if 0%{?with_python3}
+rm -rf %{buildroot}%{python3_sitelib}/oslo_log/locale
+%endif
+
+# Find language files
+%find_lang oslo_log --all-name
 
 %check
 %{__python2} setup.py test
@@ -161,6 +185,8 @@ rm -rf .testrepository
 
 %files -n python2-%{pkg_name}-tests
 %{python2_sitelib}/oslo_log/tests
+
+%files -n python-%{pkg_name}-lang -f oslo_log.lang
 
 %if 0%{?with_python3}
 %files -n python3-%{pkg_name}
