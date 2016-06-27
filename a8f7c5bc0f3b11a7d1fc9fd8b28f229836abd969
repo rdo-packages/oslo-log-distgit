@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa2559ec_6d0cb195",
+        "filename": "python-oslo-log.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2016-06-27T17:00:08Z",
+      "side": 1,
+      "message": "The %exclude lines are not needed",
+      "range": {
+        "startLine": 197,
+        "startChar": 0,
+        "endLine": 197,
+        "endChar": 42
+      },
+      "revId": "a8f7c5bc0f3b11a7d1fc9fd8b28f229836abd969",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa2559ec_4d11edab",
+        "filename": "python-oslo-log.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2016-06-27T17:00:08Z",
+      "side": 1,
+      "message": "Ditto",
+      "range": {
+        "startLine": 214,
+        "startChar": 28,
+        "endLine": 214,
+        "endChar": 36
+      },
+      "revId": "a8f7c5bc0f3b11a7d1fc9fd8b28f229836abd969",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
