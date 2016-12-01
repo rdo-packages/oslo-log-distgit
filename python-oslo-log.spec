@@ -165,10 +165,15 @@ rm -rf html/.{doctrees,buildinfo}
 %{__python2} setup.py compile_catalog -d build/lib/oslo_log/locale
 
 %install
-%py2_install
 %if 0%{?with_python3}
 %py3_install
+mv %{buildroot}%{_bindir}/convert-json %{buildroot}%{_bindir}/convert-json-%{python3_version}
+ln -s ./convert-json-%{python3_version} %{buildroot}%{_bindir}/convert-json-3
 %endif
+%py2_install
+ln -s ./convert-json %{buildroot}%{_bindir}/convert-json-2
+ln -s ./convert-json %{buildroot}%{_bindir}/convert-json-%{python2_version}
+
 
 # Install i18n .mo files (.po and .pot are not required)
 install -d -m 755 %{buildroot}%{_datadir}
@@ -194,6 +199,9 @@ rm -rf .testrepository
 %license LICENSE
 %{python2_sitelib}/oslo_log
 %{python2_sitelib}/*.egg-info
+%{_bindir}/convert-json
+%{_bindir}/convert-json-2
+%{_bindir}/convert-json-%{python2_version}
 %exclude %{python2_sitelib}/oslo_log/tests
 
 %files -n python-%{pkg_name}-doc
@@ -212,6 +220,8 @@ rm -rf .testrepository
 %license LICENSE
 %{python3_sitelib}/oslo_log
 %{python3_sitelib}/*.egg-info
+%{_bindir}/convert-json-3
+%{_bindir}/convert-json-%{python3_version}
 %exclude %{python3_sitelib}/oslo_log/tests
 %endif
 
