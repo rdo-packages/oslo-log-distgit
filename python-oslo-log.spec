@@ -8,8 +8,8 @@
 %global pkg_name oslo-log
 
 Name:           python-oslo-log
-Version:        3.3.0
-Release:        1%{?dist}
+Version:        XXX
+Release:        XXX
 Summary:        OpenStack Oslo Log library
 
 License:        ASL 2.0
@@ -195,12 +195,3 @@ rm -rf .testrepository
 
 
 %changelog
-* Wed Sep 07 2016 Haikel Guemar <hguemar@fedoraproject.org> 3.3.0-1
-- Update to 3.3.0
-
-* Wed Jun 01 2016 Charalampos Stratakis <cstratak@redhat.com> 3.2.0-2
-- Provide a python 3 tests subpackage
-
-* Tue Mar 22 2016 Haikel Guemar <hguemar@fedoraproject.org> 3.2.0-1
-- Update to 3.2.0
-
