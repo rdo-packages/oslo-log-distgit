@@ -1,6 +1,6 @@
 # UUID                                  	Group Name
 #
 15d170b032dd50c66c20f700b3f3ec75c8eea175	openstack/oslo-log-distgit-ptl
-8c0c68952e6be6d7a7ffd25d7eb661c41d2dc2cc	openstack/oslo-log-distgit-core
 63673ea7f2ae6a5666566b1ea9f14e473d00f5a9	rdo-core
+8c0c68952e6be6d7a7ffd25d7eb661c41d2dc2cc	openstack/oslo-log-distgit-core
 global:Registered-Users                 	Registered Users
