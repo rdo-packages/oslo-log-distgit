@@ -39,12 +39,14 @@ BuildRequires:  python-babel
 
 Requires:       python-babel
 Requires:       python-dateutil
+Requires:       python-monotonic
 Requires:       python-six >= 1.9.0
-Requires:       python-oslo-config
-Requires:       python-oslo-context
-Requires:       python-oslo-i18n
-Requires:       python-oslo-utils
-Requires:       python-oslo-serialization
+Requires:       python-oslo-config >= 2:3.14.0
+Requires:       python-oslo-context >= 2.9.0
+Requires:       python-oslo-i18n >= 2.1.0
+Requires:       python-oslo-utils >= 3.18.0
+Requires:       python-oslo-serialization >= 1.10.0
+Requires:       python-pbr
 Requires:       python-debtcollector
 Requires:       python-inotify
 Requires:       python-%{pkg_name}-lang = %{version}-%{release}
@@ -119,12 +121,14 @@ BuildRequires:  python3-inotify
 
 Requires:       python3-babel
 Requires:       python3-dateutil
+Requires:       python3-monotonic
 Requires:       python3-six >= 1.9.0
-Requires:       python3-oslo-config
-Requires:       python3-oslo-context
-Requires:       python3-oslo-i18n
-Requires:       python3-oslo-utils
-Requires:       python3-oslo-serialization
+Requires:       python3-oslo-config >= 2:3.14.0
+Requires:       python3-oslo-context >= 2.9.0
+Requires:       python3-oslo-i18n >= 2.1.0
+Requires:       python3-oslo-utils >= 3.18.0
+Requires:       python3-oslo-serialization >= 1.10.0
+Requires:       python3-pbr
 Requires:       python3-debtcollector
 Requires:       python3-inotify
 Requires:       python-%{pkg_name}-lang = %{version}-%{release}
