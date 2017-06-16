@@ -9,7 +9,7 @@
 
 Name:           python-oslo-log
 Version:        3.20.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        OpenStack Oslo Log library
 
 License:        ASL 2.0
@@ -190,11 +190,10 @@ rm -rf %{buildroot}%{python3_sitelib}/oslo_log/locale
 %find_lang oslo_log --all-name
 
 %check
-# TODO(jpena): Temporarily skipping tests until https://review.openstack.org/430210 is merged
-%{__python2} setup.py test ||:
+%{__python2} setup.py test
 %if 0%{?with_python3}
 rm -rf .testrepository
-%{__python3} setup.py test ||:
+%{__python3} setup.py test
 %endif
 
 %files -n python2-%{pkg_name}
