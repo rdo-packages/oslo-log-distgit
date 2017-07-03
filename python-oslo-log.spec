@@ -23,6 +23,7 @@ Summary:        OpenStack Oslo Log library
 
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
+BuildRequires:  git
 # Required for tests
 BuildRequires:  python-dateutil
 BuildRequires:  python-mock
@@ -59,7 +60,7 @@ support for context specific logging (like resource id’s etc).
 Summary:    Documentation for the Oslo Log handling library
 
 BuildRequires:  python-sphinx
-BuildRequires:  python-oslo-sphinx
+BuildRequires:  python-openstackdocstheme
 BuildRequires:  python-oslo-config
 BuildRequires:  python-oslo-utils
 BuildRequires:  python-oslo-context
@@ -149,7 +150,7 @@ Summary:   Translation files for Oslo log library
 Translation files for Oslo log library
 
 %prep
-%setup -q -n %{pypi_name}-%{upstream_version}
+%autosetup -n %{pypi_name}-%{upstream_version} -S git
 # Let RPM handle the dependencies
 rm -rf {test-,}requirements.txt
 
@@ -160,9 +161,9 @@ rm -rf {test-,}requirements.txt
 %endif
 
 # generate html docs
-PYTHONPATH=. sphinx-build doc/source html
+%{__python2} setup.py build_sphinx -b html
 # remove the sphinx-build leftovers
-rm -rf html/.{doctrees,buildinfo}
+rm -rf doc/build/html/.{doctrees,buildinfo}
 # Generate i18n files
 %{__python2} setup.py compile_catalog -d build/lib/oslo_log/locale
 
@@ -208,7 +209,7 @@ rm -rf .testrepository
 %exclude %{python2_sitelib}/oslo_log/tests
 
 %files -n python-%{pkg_name}-doc
-%doc html
+%doc doc/build/html
 %license LICENSE
 
 %files -n python2-%{pkg_name}-tests
