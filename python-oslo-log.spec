@@ -42,12 +42,12 @@ Requires:       python-babel
 Requires:       python-dateutil
 Requires:       python-monotonic
 Requires:       python-six >= 1.9.0
-Requires:       python-oslo-config >= 2:3.14.0
-Requires:       python-oslo-context >= 2.9.0
+Requires:       python-oslo-config >= 2:4.0.0
+Requires:       python-oslo-context >= 2.14.0
 Requires:       python-oslo-i18n >= 2.1.0
-Requires:       python-oslo-utils >= 3.18.0
+Requires:       python-oslo-utils >= 3.20.0
 Requires:       python-oslo-serialization >= 1.10.0
-Requires:       python-debtcollector
+Requires:       python-debtcollector >= 1.2.0
 Requires:       python-inotify
 Requires:       python-%{pkg_name}-lang = %{version}-%{release}
 
@@ -74,7 +74,7 @@ Summary:    Tests for the Oslo Log handling library
 Requires:       python-%{pkg_name} = %{version}-%{release}
 Requires:       python-mock
 Requires:       python-oslotest
-Requires:       python-oslo-config
+Requires:       python-oslo-config >= 2:4.0.0
 Requires:       python-subunit
 Requires:       python-testrepository
 Requires:       python-testscenarios
@@ -90,7 +90,7 @@ Summary:    Tests for the Oslo Log handling library
 Requires:       python3-%{pkg_name} = %{version}-%{release}
 Requires:       python3-mock
 Requires:       python3-oslotest
-Requires:       python3-oslo-config
+Requires:       python3-oslo-config >= 2:4.0.0
 Requires:       python3-subunit
 Requires:       python3-testrepository
 Requires:       python3-testscenarios
@@ -123,10 +123,10 @@ Requires:       python3-babel
 Requires:       python3-dateutil
 Requires:       python3-monotonic
 Requires:       python3-six >= 1.9.0
-Requires:       python3-oslo-config >= 2:3.14.0
-Requires:       python3-oslo-context >= 2.9.0
+Requires:       python3-oslo-config >= 2:4.0.0
+Requires:       python3-oslo-context >= 2.14.0
 Requires:       python3-oslo-i18n >= 2.1.0
-Requires:       python3-oslo-utils >= 3.18.0
+Requires:       python3-oslo-utils >= 3.20.0
 Requires:       python3-oslo-serialization >= 1.10.0
 Requires:       python3-debtcollector
 Requires:       python3-inotify
