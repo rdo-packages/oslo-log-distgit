@@ -3,7 +3,7 @@
 %endif
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
-
+%global with_doc 1
 %global pypi_name oslo.log
 %global pkg_name oslo-log
 %global common_desc \
@@ -61,6 +61,7 @@ Requires:       python-%{pkg_name}-lang = %{version}-%{release}
 %description -n python2-%{pkg_name}
 %{common_desc}
 
+%if 0%{?with_doc}
 %package -n python-%{pkg_name}-doc
 Summary:    Documentation for the Oslo Log handling library
 
@@ -72,6 +73,7 @@ BuildRequires:  python-oslo-context
 
 %description -n python-%{pkg_name}-doc
 Documentation for the Oslo Log handling library.
+%endif
 
 %package -n python2-%{pkg_name}-tests
 Summary:    Tests for the Oslo Log handling library
@@ -163,10 +165,12 @@ rm -rf {test-,}requirements.txt
 %py3_build
 %endif
 
+%if 0%{?with_doc}
 # generate html docs
 %{__python2} setup.py build_sphinx -b html
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
+%endif
 # Generate i18n files
 %{__python2} setup.py compile_catalog -d build/lib/oslo_log/locale
 
@@ -210,9 +214,11 @@ rm -rf .testrepository
 %{_bindir}/convert-json-%{python2_version}
 %exclude %{python2_sitelib}/oslo_log/tests
 
+%if 0%{?with_doc}
 %files -n python-%{pkg_name}-doc
 %doc doc/build/html
 %license LICENSE
+%endif
 
 %files -n python2-%{pkg_name}-tests
 %{python2_sitelib}/oslo_log/tests
