@@ -6,6 +6,13 @@
 
 %global pypi_name oslo.log
 %global pkg_name oslo-log
+%global common_desc \
+OpenStack logging configuration library provides standardized configuration \
+for all openstack projects. It also provides custom formatters, handlers and \
+support for context specific logging (like resource id’s etc).
+
+%global common_desc1 \
+Tests for the Oslo Log handling library.
 
 Name:           python-oslo-log
 Version:        XXX
@@ -52,9 +59,7 @@ Requires:       python-inotify
 Requires:       python-%{pkg_name}-lang = %{version}-%{release}
 
 %description -n python2-%{pkg_name}
-OpenStack logging configuration library provides standardized configuration
-for all openstack projects. It also provides custom formatters, handlers and
-support for context specific logging (like resource id’s etc).
+%{common_desc}
 
 %package -n python-%{pkg_name}-doc
 Summary:    Documentation for the Oslo Log handling library
@@ -81,7 +86,7 @@ Requires:       python-testscenarios
 Requires:       python-testtools
 
 %description -n python2-%{pkg_name}-tests
-Tests for the Oslo Log handling library.
+%{common_desc1}
 
 %if 0%{?with_python3}
 %package -n python3-%{pkg_name}-tests
@@ -97,7 +102,7 @@ Requires:       python3-testscenarios
 Requires:       python3-testtools
 
 %description -n python3-%{pkg_name}-tests
-Tests for the Oslo Log handling library.
+%{common_desc1}
 %endif
 
 %if 0%{?with_python3}
@@ -139,9 +144,7 @@ external processes.
 %endif
 
 %description
-OpenStack logging configuration library provides standardized configuration
-for all openstack projects. It also provides custom formatters, handlers and
-support for context specific logging (like resource id’s etc).
+%{common_desc}
 
 %package  -n python-%{pkg_name}-lang
 Summary:   Translation files for Oslo log library
