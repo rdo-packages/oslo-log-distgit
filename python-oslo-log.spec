@@ -125,6 +125,7 @@ BuildRequires:  python3-testrepository
 BuildRequires:  python3-testscenarios
 BuildRequires:  python3-testtools
 BuildRequires:  python3-inotify
+BuildRequires:  openstack-macros
 
 Requires:       python3-babel
 Requires:       python3-dateutil
@@ -157,7 +158,7 @@ Translation files for Oslo log library
 %prep
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
 # Let RPM handle the dependencies
-rm -rf {test-,}requirements.txt
+%py_req_cleanup
 
 %build
 %py2_build
