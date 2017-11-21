@@ -8,7 +8,7 @@
 %global pkg_name oslo-log
 
 Name:           python-oslo-log
-Version:        3.30.0
+Version:        3.30.1
 Release:        1%{?dist}
 Summary:        OpenStack Oslo Log library
 
@@ -236,6 +236,9 @@ rm -rf .testrepository
 
 
 %changelog
+* Tue Nov 21 2017 RDO <dev@lists.rdoproject.org> 3.30.1-1
+- Update to 3.30.1
+
 * Fri Aug 11 2017 Alfredo Moralejo <amoralej@redhat.com> 3.30.0-1
 - Update to 3.30.0
 
