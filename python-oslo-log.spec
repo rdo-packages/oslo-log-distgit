@@ -35,6 +35,7 @@ BuildRequires:  git
 BuildRequires:  python-dateutil
 BuildRequires:  python-mock
 BuildRequires:  python-oslotest
+BuildRequires:  python-oslo-context
 BuildRequires:  python-oslo-config
 BuildRequires:  python-oslo-serialization
 BuildRequires:  python-subunit
@@ -69,7 +70,6 @@ BuildRequires:  python-sphinx
 BuildRequires:  python-openstackdocstheme
 BuildRequires:  python-oslo-config
 BuildRequires:  python-oslo-utils
-BuildRequires:  python-oslo-context
 
 %description -n python-%{pkg_name}-doc
 Documentation for the Oslo Log handling library.
