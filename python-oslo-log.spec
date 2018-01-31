@@ -29,34 +29,43 @@ Summary:        OpenStack Oslo Log library
 %{?python_provide:%python_provide python2-%{pkg_name}}
 
 BuildRequires:  python2-devel
-BuildRequires:  python-pbr
+BuildRequires:  python2-pbr
 BuildRequires:  git
 # Required for tests
-BuildRequires:  python-dateutil
-BuildRequires:  python-mock
-BuildRequires:  python-oslotest
-BuildRequires:  python-oslo-context
-BuildRequires:  python-oslo-config
-BuildRequires:  python-oslo-serialization
-BuildRequires:  python-subunit
+BuildRequires:  python2-dateutil
+BuildRequires:  python2-mock
+BuildRequires:  python2-oslotest
+BuildRequires:  python2-oslo-context
+BuildRequires:  python2-oslo-config
+BuildRequires:  python2-oslo-serialization
+BuildRequires:  python2-subunit
+BuildRequires:  python2-testtools
+BuildRequires:  python2-inotify
+# Required to compile translation files
+BuildRequires:  python2-babel
+%if 0%{?fedora} > 0
+BuildRequires:  python2-testrepository
+BuildRequires:  python2-testscenarios
+%else
 BuildRequires:  python-testrepository
 BuildRequires:  python-testscenarios
-BuildRequires:  python-testtools
-BuildRequires:  python-inotify
-# Required to compile translation files
-BuildRequires:  python-babel
+%endif
 
-Requires:       python-babel
-Requires:       python-dateutil
+Requires:       python2-pbr
+Requires:       python2-dateutil
+Requires:       python2-six >= 1.10.0
+Requires:       python2-oslo-config >= 2:5.1.0
+Requires:       python2-oslo-context >= 2.19.2
+Requires:       python2-oslo-i18n >= 3.15.3
+Requires:       python2-oslo-utils >= 3.33.0
+Requires:       python2-oslo-serialization >= 2.18.0
+Requires:       python2-debtcollector >= 1.2.0
+Requires:       python2-inotify
+%if 0%{?fedora} > 0
+Requires:       python2-monotonic
+%else
 Requires:       python-monotonic
-Requires:       python-six >= 1.9.0
-Requires:       python-oslo-config >= 2:4.0.0
-Requires:       python-oslo-context >= 2.14.0
-Requires:       python-oslo-i18n >= 2.1.0
-Requires:       python-oslo-utils >= 3.20.0
-Requires:       python-oslo-serialization >= 1.10.0
-Requires:       python-debtcollector >= 1.2.0
-Requires:       python-inotify
+%endif
 Requires:       python-%{pkg_name}-lang = %{version}-%{release}
 
 %description -n python2-%{pkg_name}
@@ -66,10 +75,10 @@ Requires:       python-%{pkg_name}-lang = %{version}-%{release}
 %package -n python-%{pkg_name}-doc
 Summary:    Documentation for the Oslo Log handling library
 
-BuildRequires:  python-sphinx
-BuildRequires:  python-openstackdocstheme
-BuildRequires:  python-oslo-config
-BuildRequires:  python-oslo-utils
+BuildRequires:  python2-sphinx
+BuildRequires:  python2-openstackdocstheme
+BuildRequires:  python2-oslo-config
+BuildRequires:  python2-oslo-utils
 
 %description -n python-%{pkg_name}-doc
 Documentation for the Oslo Log handling library.
@@ -79,13 +88,18 @@ Documentation for the Oslo Log handling library.
 Summary:    Tests for the Oslo Log handling library
 
 Requires:       python-%{pkg_name} = %{version}-%{release}
-Requires:       python-mock
-Requires:       python-oslotest
-Requires:       python-oslo-config >= 2:4.0.0
-Requires:       python-subunit
+Requires:       python2-mock
+Requires:       python2-oslotest
+Requires:       python2-oslo-config >= 2:5.1.0
+Requires:       python2-subunit
+Requires:       python2-testtools
+%if 0%{?fedora} > 0
+Requires:       python2-testrepository
+Requires:       python2-testscenarios
+%else
 Requires:       python-testrepository
 Requires:       python-testscenarios
-Requires:       python-testtools
+%endif
 
 %description -n python2-%{pkg_name}-tests
 %{common_desc1}
@@ -97,7 +111,7 @@ Summary:    Tests for the Oslo Log handling library
 Requires:       python3-%{pkg_name} = %{version}-%{release}
 Requires:       python3-mock
 Requires:       python3-oslotest
-Requires:       python3-oslo-config >= 2:4.0.0
+Requires:       python3-oslo-config >= 2:5.1.0
 Requires:       python3-subunit
 Requires:       python3-testrepository
 Requires:       python3-testscenarios
@@ -126,15 +140,15 @@ BuildRequires:  python3-testscenarios
 BuildRequires:  python3-testtools
 BuildRequires:  python3-inotify
 
-Requires:       python3-babel
+Requires:       python3-pbr
 Requires:       python3-dateutil
 Requires:       python3-monotonic
-Requires:       python3-six >= 1.9.0
-Requires:       python3-oslo-config >= 2:4.0.0
-Requires:       python3-oslo-context >= 2.14.0
-Requires:       python3-oslo-i18n >= 2.1.0
-Requires:       python3-oslo-utils >= 3.20.0
-Requires:       python3-oslo-serialization >= 1.10.0
+Requires:       python3-six >= 1.10.0
+Requires:       python3-oslo-config >= 2:5.1.0
+Requires:       python3-oslo-context >= 2.19.2
+Requires:       python3-oslo-i18n >= 3.15.3
+Requires:       python3-oslo-utils >= 3.33.0
+Requires:       python3-oslo-serialization >= 2.18.0
 Requires:       python3-debtcollector
 Requires:       python3-inotify
 Requires:       python-%{pkg_name}-lang = %{version}-%{release}
