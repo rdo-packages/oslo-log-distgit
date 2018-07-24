@@ -55,7 +55,7 @@ BuildRequires:  python-testscenarios
 Requires:       python2-pbr
 Requires:       python2-dateutil
 Requires:       python2-six >= 1.10.0
-Requires:       python2-oslo-config >= 2:5.1.0
+Requires:       python2-oslo-config >= 2:5.2.0
 Requires:       python2-oslo-context >= 2.19.2
 Requires:       python2-oslo-i18n >= 3.15.3
 Requires:       python2-oslo-utils >= 3.33.0
@@ -92,7 +92,7 @@ Summary:    Tests for the Oslo Log handling library
 Requires:       python2-%{pkg_name} = %{version}-%{release}
 Requires:       python2-mock
 Requires:       python2-oslotest
-Requires:       python2-oslo-config >= 2:5.1.0
+Requires:       python2-oslo-config >= 2:5.2.0
 Requires:       python2-subunit
 Requires:       python2-testtools
 %if 0%{?fedora} > 0
@@ -113,7 +113,7 @@ Summary:    Tests for the Oslo Log handling library
 Requires:       python3-%{pkg_name} = %{version}-%{release}
 Requires:       python3-mock
 Requires:       python3-oslotest
-Requires:       python3-oslo-config >= 2:5.1.0
+Requires:       python3-oslo-config >= 2:5.2.0
 Requires:       python3-subunit
 Requires:       python3-testrepository
 Requires:       python3-testscenarios
@@ -146,7 +146,7 @@ Requires:       python3-pbr
 Requires:       python3-dateutil
 Requires:       python3-monotonic
 Requires:       python3-six >= 1.10.0
-Requires:       python3-oslo-config >= 2:5.1.0
+Requires:       python3-oslo-config >= 2:5.2.0
 Requires:       python3-oslo-context >= 2.19.2
 Requires:       python3-oslo-i18n >= 3.15.3
 Requires:       python3-oslo-utils >= 3.33.0
