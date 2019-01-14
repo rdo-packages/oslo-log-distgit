@@ -1,4 +1,4 @@
-%if 0%{?fedora} >= 24
+%if 0%{?fedora} || 0%{?rhel} > 7
 %global with_python3 1
 %endif
 
@@ -42,7 +42,7 @@ BuildRequires:  python2-subunit
 BuildRequires:  python2-testtools
 # Required to compile translation files
 BuildRequires:  python2-babel
-%if 0%{?fedora} > 0
+%if 0%{?fedora} || 0%{?rhel} > 7
 BuildRequires:  python2-inotify
 BuildRequires:  python2-testrepository
 BuildRequires:  python2-testscenarios
@@ -61,7 +61,7 @@ Requires:       python2-oslo-i18n >= 3.15.3
 Requires:       python2-oslo-utils >= 3.33.0
 Requires:       python2-oslo-serialization >= 2.18.0
 Requires:       python2-debtcollector >= 1.2.0
-%if 0%{?fedora} > 0
+%if 0%{?fedora} || 0%{?rhel} > 7
 Requires:       python2-inotify
 Requires:       python2-monotonic
 %else
@@ -95,7 +95,7 @@ Requires:       python2-oslotest
 Requires:       python2-oslo-config >= 2:5.2.0
 Requires:       python2-subunit
 Requires:       python2-testtools
-%if 0%{?fedora} > 0
+%if 0%{?fedora} || 0%{?rhel} > 7
 Requires:       python2-testrepository
 Requires:       python2-testscenarios
 %else
