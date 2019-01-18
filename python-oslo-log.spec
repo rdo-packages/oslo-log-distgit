@@ -204,11 +204,16 @@ ln -s ./convert-json %{buildroot}%{_bindir}/convert-json-%{python2_version}
 
 # Install i18n .mo files (.po and .pot are not required)
 install -d -m 755 %{buildroot}%{_datadir}
+%if 0%{?with_python3}
+rm -rf %{buildroot}%{python2_sitelib}/oslo_log/locale
+rm -f %{buildroot}%{python3_sitelib}/oslo_log/locale/*/LC_*/oslo_log*po
+rm -f %{buildroot}%{python3_sitelib}/oslo_log/locale/*pot
+mv %{buildroot}%{python3_sitelib}/oslo_log/locale %{buildroot}%{_datadir}/locale
+%else
+rm -rf %{buildroot}%{python3_sitelib}/oslo_log/locale
 rm -f %{buildroot}%{python2_sitelib}/oslo_log/locale/*/LC_*/oslo_log*po
 rm -f %{buildroot}%{python2_sitelib}/oslo_log/locale/*pot
 mv %{buildroot}%{python2_sitelib}/oslo_log/locale %{buildroot}%{_datadir}/locale
-%if 0%{?with_python3}
-rm -rf %{buildroot}%{python3_sitelib}/oslo_log/locale
 %endif
 
 # Find language files
