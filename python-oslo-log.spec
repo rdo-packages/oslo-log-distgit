@@ -63,10 +63,10 @@ Requires:       python2-oslo-serialization >= 2.25.0
 Requires:       python2-debtcollector >= 1.19.0
 %if 0%{?fedora} || 0%{?rhel} > 7
 Requires:       python2-inotify
-Requires:       python2-monotonic
+Requires:       python2-monotonic >= 1.4
 %else
 Requires:       python-inotify
-Requires:       python-monotonic
+Requires:       python-monotonic >= 1.4
 %endif
 Requires:       python-%{pkg_name}-lang = %{version}-%{release}
 
@@ -145,7 +145,6 @@ BuildRequires:  python3-inotify
 
 Requires:       python3-pbr
 Requires:       python3-dateutil
-Requires:       python3-monotonic
 Requires:       python3-six >= 1.11.0
 Requires:       python3-oslo-config >= 2:5.2.0
 Requires:       python3-oslo-context >= 2.20.0
