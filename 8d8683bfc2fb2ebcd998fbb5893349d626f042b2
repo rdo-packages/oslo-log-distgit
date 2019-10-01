@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "91ce49e8_8edcf04a",
+        "filename": "python-oslo-log.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-10-01T10:31:21Z",
+      "side": 1,
+      "message": "-doc subpackages are not versioned so no need to do this python_provide",
+      "revId": "8d8683bfc2fb2ebcd998fbb5893349d626f042b2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
