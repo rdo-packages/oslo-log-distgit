@@ -66,7 +66,6 @@ BuildRequires:  python%{pyver}-inotify
 
 Requires:       python%{pyver}-pbr
 Requires:       python%{pyver}-dateutil
-Requires:       python%{pyver}-six >= 1.11.0
 Requires:       python%{pyver}-oslo-config >= 2:5.2.0
 Requires:       python%{pyver}-oslo-context >= 2.20.0
 Requires:       python%{pyver}-oslo-i18n >= 3.20.0
