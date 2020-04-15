@@ -1,14 +1,3 @@
-# Macros for py2/py3 compatibility
-%if 0%{?fedora} || 0%{?rhel} > 7
-%global pyver %{python3_pkgversion}
-%else
-%global pyver 2
-%endif
-%global pyver_bin python%{pyver}
-%global pyver_sitelib %python%{pyver}_sitelib
-%global pyver_install %py%{pyver}_install
-%global pyver_build %py%{pyver}_build
-# End of macros for py2/py3 compatibility
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
@@ -34,83 +23,70 @@ URL:            http://launchpad.net/oslo
 Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 BuildArch:      noarch
 
-%package -n python%{pyver}-%{pkg_name}
+%package -n python3-%{pkg_name}
 Summary:        OpenStack Oslo Log library
-%{?python_provide:%python_provide python%{pyver}-%{pkg_name}}
-%if %{pyver} == 3
+%{?python_provide:%python_provide python3-%{pkg_name}}
 Obsoletes: python2-%{pkg_name} < %{version}-%{release}
-%endif
 
-BuildRequires:  python%{pyver}-devel
-BuildRequires:  python%{pyver}-pbr
+BuildRequires:  python3-devel
+BuildRequires:  python3-pbr
 BuildRequires:  git
 # Required for tests
-BuildRequires:  python%{pyver}-dateutil
-BuildRequires:  python%{pyver}-mock
-BuildRequires:  python%{pyver}-oslotest
-BuildRequires:  python%{pyver}-oslo-context
-BuildRequires:  python%{pyver}-oslo-config
-BuildRequires:  python%{pyver}-oslo-serialization
-BuildRequires:  python%{pyver}-subunit
-BuildRequires:  python%{pyver}-testtools
-BuildRequires:  python%{pyver}-testrepository
-BuildRequires:  python%{pyver}-testscenarios
+BuildRequires:  python3-dateutil
+BuildRequires:  python3-mock
+BuildRequires:  python3-oslotest
+BuildRequires:  python3-oslo-context
+BuildRequires:  python3-oslo-config
+BuildRequires:  python3-oslo-serialization
+BuildRequires:  python3-subunit
+BuildRequires:  python3-testtools
+BuildRequires:  python3-testrepository
+BuildRequires:  python3-testscenarios
 # Required to compile translation files
-BuildRequires:  python%{pyver}-babel
-# Handle python2 exception
-%if %{pyver} == 2
-BuildRequires:  python-inotify
-%else
-BuildRequires:  python%{pyver}-inotify
-%endif
+BuildRequires:  python3-babel
+BuildRequires:  python3-inotify
 
-Requires:       python%{pyver}-pbr
-Requires:       python%{pyver}-dateutil
-Requires:       python%{pyver}-oslo-config >= 2:5.2.0
-Requires:       python%{pyver}-oslo-context >= 2.20.0
-Requires:       python%{pyver}-oslo-i18n >= 3.20.0
-Requires:       python%{pyver}-oslo-utils >= 3.36.0
-Requires:       python%{pyver}-oslo-serialization >= 2.25.0
-Requires:       python%{pyver}-debtcollector >= 1.19.0
-# Handle python2 exception
-%if %{pyver} == 2
-Requires:       python-inotify
-Requires:       python%{pyver}-monotonic >= 1.4
-%else
-Requires:       python%{pyver}-inotify
-%endif
+Requires:       python3-pbr
+Requires:       python3-dateutil
+Requires:       python3-oslo-config >= 2:5.2.0
+Requires:       python3-oslo-context >= 2.20.0
+Requires:       python3-oslo-i18n >= 3.20.0
+Requires:       python3-oslo-utils >= 3.36.0
+Requires:       python3-oslo-serialization >= 2.25.0
+Requires:       python3-debtcollector >= 1.19.0
+Requires:       python3-inotify
 
 Requires:       python-%{pkg_name}-lang = %{version}-%{release}
 
-%description -n python%{pyver}-%{pkg_name}
+%description -n python3-%{pkg_name}
 %{common_desc}
 
 %if 0%{?with_doc}
 %package -n python-%{pkg_name}-doc
 Summary:    Documentation for the Oslo Log handling library
 
-BuildRequires:  python%{pyver}-sphinx
-BuildRequires:  python%{pyver}-openstackdocstheme
-BuildRequires:  python%{pyver}-oslo-config
-BuildRequires:  python%{pyver}-oslo-utils
+BuildRequires:  python3-sphinx
+BuildRequires:  python3-openstackdocstheme
+BuildRequires:  python3-oslo-config
+BuildRequires:  python3-oslo-utils
 
 %description -n python-%{pkg_name}-doc
 Documentation for the Oslo Log handling library.
 %endif
 
-%package -n python%{pyver}-%{pkg_name}-tests
+%package -n python3-%{pkg_name}-tests
 Summary:    Tests for the Oslo Log handling library
 
-Requires:       python%{pyver}-%{pkg_name} = %{version}-%{release}
-Requires:       python%{pyver}-mock
-Requires:       python%{pyver}-oslotest
-Requires:       python%{pyver}-oslo-config >= 2:5.2.0
-Requires:       python%{pyver}-subunit
-Requires:       python%{pyver}-testtools
-Requires:       python%{pyver}-testrepository
-Requires:       python%{pyver}-testscenarios
+Requires:       python3-%{pkg_name} = %{version}-%{release}
+Requires:       python3-mock
+Requires:       python3-oslotest
+Requires:       python3-oslo-config >= 2:5.2.0
+Requires:       python3-subunit
+Requires:       python3-testtools
+Requires:       python3-testrepository
+Requires:       python3-testscenarios
 
-%description -n python%{pyver}-%{pkg_name}-tests
+%description -n python3-%{pkg_name}-tests
 %{common_desc1}
 
 %description
@@ -128,41 +104,41 @@ Translation files for Oslo log library
 rm -rf {test-,}requirements.txt
 
 %build
-%{pyver_build}
+%{py3_build}
 
 %if 0%{?with_doc}
 # generate html docs
-PYTHONPATH=. sphinx-build-%{pyver} -W -b html doc/source doc/build/html
-# remove the sphinx-build-%{pyver} leftovers
+PYTHONPATH=. sphinx-build-3 -W -b html doc/source doc/build/html
+# remove the sphinx-build-3 leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 # Generate i18n files
-%{pyver_bin} setup.py compile_catalog -d build/lib/oslo_log/locale
+python3 setup.py compile_catalog -d build/lib/oslo_log/locale
 
 %install
-%{pyver_install}
-ln -s ./convert-json %{buildroot}%{_bindir}/convert-json-%{pyver}
+%{py3_install}
+ln -s ./convert-json %{buildroot}%{_bindir}/convert-json-3
 
 # Install i18n .mo files (.po and .pot are not required)
 install -d -m 755 %{buildroot}%{_datadir}
-rm -f %{buildroot}%{pyver_sitelib}/oslo_log/locale/*/LC_*/oslo_log*po
-rm -f %{buildroot}%{pyver_sitelib}/oslo_log/locale/*pot
-mv %{buildroot}%{pyver_sitelib}/oslo_log/locale %{buildroot}%{_datadir}/locale
+rm -f %{buildroot}%{python3_sitelib}/oslo_log/locale/*/LC_*/oslo_log*po
+rm -f %{buildroot}%{python3_sitelib}/oslo_log/locale/*pot
+mv %{buildroot}%{python3_sitelib}/oslo_log/locale %{buildroot}%{_datadir}/locale
 
 # Find language files
 %find_lang oslo_log --all-name
 
 %check
-%{pyver_bin} setup.py test
+python3 setup.py test
 
-%files -n python%{pyver}-%{pkg_name}
+%files -n python3-%{pkg_name}
 %doc README.rst ChangeLog AUTHORS
 %license LICENSE
-%{pyver_sitelib}/oslo_log
-%{pyver_sitelib}/*.egg-info
+%{python3_sitelib}/oslo_log
+%{python3_sitelib}/*.egg-info
 %{_bindir}/convert-json
-%{_bindir}/convert-json-%{pyver}
-%exclude %{pyver_sitelib}/oslo_log/tests
+%{_bindir}/convert-json-3
+%exclude %{python3_sitelib}/oslo_log/tests
 
 %if 0%{?with_doc}
 %files -n python-%{pkg_name}-doc
@@ -170,8 +146,8 @@ mv %{buildroot}%{pyver_sitelib}/oslo_log/locale %{buildroot}%{_datadir}/locale
 %license LICENSE
 %endif
 
-%files -n python%{pyver}-%{pkg_name}-tests
-%{pyver_sitelib}/oslo_log/tests
+%files -n python3-%{pkg_name}-tests
+%{python3_sitelib}/oslo_log/tests
 
 %files -n python-%{pkg_name}-lang -f oslo_log.lang
 %license LICENSE
