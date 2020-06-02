@@ -113,7 +113,7 @@ PYTHONPATH=. sphinx-build-3 -W -b html doc/source doc/build/html
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 # Generate i18n files
-python3 setup.py compile_catalog -d build/lib/oslo_log/locale
+python3 setup.py compile_catalog -d build/lib/oslo_log/locale --domain oslo_log
 
 %install
 %{py3_install}
