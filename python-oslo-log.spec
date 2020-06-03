@@ -25,8 +25,8 @@ support for context specific logging (like resource id’s etc).
 Tests for the Oslo Log handling library.
 
 Name:           python-oslo-log
-Version:        3.44.1
-Release:        2%{?dist}
+Version:        3.44.2
+Release:        1%{?dist}
 Summary:        OpenStack Oslo Log library
 
 License:        ASL 2.0
@@ -178,6 +178,9 @@ mv %{buildroot}%{pyver_sitelib}/oslo_log/locale %{buildroot}%{_datadir}/locale
 %license LICENSE
 
 %changelog
+* Wed Jun 03 2020 RDO <dev@lists.rdoproject.org> 3.44.2-1
+- Update to 3.44.2
+
 * Thu Oct 03 2019 Joel Capitao <jcapitao@redhat.com> 3.44.1-2
 - Removed python2 subpackages in no el7 distros
 
