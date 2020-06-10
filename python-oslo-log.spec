@@ -25,7 +25,7 @@ support for context specific logging (like resource id’s etc).
 Tests for the Oslo Log handling library.
 
 Name:           python-oslo-log
-Version:        3.44.2
+Version:        3.44.3
 Release:        1%{?dist}
 Summary:        OpenStack Oslo Log library
 
@@ -178,6 +178,9 @@ mv %{buildroot}%{pyver_sitelib}/oslo_log/locale %{buildroot}%{_datadir}/locale
 %license LICENSE
 
 %changelog
+* Wed Jun 10 2020 RDO <dev@lists.rdoproject.org> 3.44.3-1
+- Update to 3.44.3
+
 * Wed Jun 03 2020 RDO <dev@lists.rdoproject.org> 3.44.2-1
 - Update to 3.44.2
 
