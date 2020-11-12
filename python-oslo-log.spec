@@ -43,7 +43,7 @@ Obsoletes: python2-%{pkg_name} < %{version}-%{release}
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-pbr
-BuildRequires:  git
+BuildRequires:  git-core
 # Required for tests
 BuildRequires:  python3-dateutil
 BuildRequires:  python3-mock
