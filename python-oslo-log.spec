@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0x4c29ff0e437f3351fd82bdf47c5a3bc787dc7035
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
@@ -16,13 +16,14 @@ support for context specific logging (like resource id’s etc).
 Tests for the Oslo Log handling library.
 
 Name:           python-oslo-log
-Version:        XXX
-Release:        XXX
+Version:        4.6.1
+Release:        1%{?dist}
 Summary:        OpenStack Oslo Log library
 
 License:        ASL 2.0
 URL:            http://launchpad.net/oslo
 Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+Patch0001:      0001-Use-project-when-logging-the-user-identity.patch
 # Required for tarball sources verification
 %if 0%{?sources_gpg} == 1
 Source101:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz.asc
@@ -170,3 +171,6 @@ python3 setup.py test
 %license LICENSE
 
 %changelog
+* Fri Mar 11 2022 RDO <dev@lists.rdoproject.org> 4.6.1-1
+- Update to 4.6.1
+
