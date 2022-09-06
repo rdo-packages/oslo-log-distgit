@@ -63,11 +63,12 @@ BuildRequires:  python3-testscenarios
 # Required to compile translation files
 BuildRequires:  python3-babel
 BuildRequires:  python3-inotify
+BuildRequires:  python3-eventlet
 
 Requires:       python3-pbr
 Requires:       python3-dateutil
 Requires:       python3-oslo-config >= 2:5.2.0
-Requires:       python3-oslo-context >= 2.20.0
+Requires:       python3-oslo-context >= 2.21.0
 Requires:       python3-oslo-i18n >= 3.20.0
 Requires:       python3-oslo-utils >= 3.36.0
 Requires:       python3-oslo-serialization >= 2.25.0
