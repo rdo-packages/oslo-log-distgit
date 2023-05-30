@@ -58,7 +58,6 @@ BuildRequires:  python3-oslo-config
 BuildRequires:  python3-oslo-serialization
 BuildRequires:  python3-subunit
 BuildRequires:  python3-testtools
-BuildRequires:  python3-testrepository
 BuildRequires:  python3-testscenarios
 # Required to compile translation files
 BuildRequires:  python3-babel
@@ -102,7 +101,6 @@ Requires:       python3-oslotest
 Requires:       python3-oslo-config >= 2:5.2.0
 Requires:       python3-subunit
 Requires:       python3-testtools
-Requires:       python3-testrepository
 Requires:       python3-testscenarios
 
 %description -n python3-%{pkg_name}-tests
