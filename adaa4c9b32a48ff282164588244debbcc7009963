@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78b543f3_8639bf63",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-06-20T15:29:14Z",
+      "side": 1,
+      "message": "rpm -qp --requires https://logserver.rdoproject.org/13/48913/3/check/DLRN-rpmbuild-centos9/76b1ff5/buildset/centos9/repos/ea/f6/eaf6089ab23d347dbe5ca660db74d646064269ae_dev/python-oslo-log+tests-5.2.0-0.20230620145405.eaf6089.el9.noarch.rpm",
+      "revId": "adaa4c9b32a48ff282164588244debbcc7009963",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
