@@ -16,6 +16,24 @@
       "message": "WRT tests subpackages, the requirements included in test-requirements are automatically added to a \"test\" extras option so we may use that in a +test subpackage. However, this would end up in a python3-foo-tests with the files and a python3-foo+test with the requirements which is not nice.\n\nTo fix that, we may move the files to the python3-foo+test package, although this would break compatibility unless we do a provides to -tests in +test subpackage.\n\nI still have doubts the effort of this is worthy or if we should apply a simpler approach\n",
       "revId": "a749f99c3f6012c70badcc288cf9d6a0851f6b94",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56bcee7d_f73973d7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-06-21T16:13:49Z",
+      "side": 1,
+      "message": "I proposed to obsolete -tests in +test subpkg to handle this case, but this is one solution that needs to be discussed",
+      "parentUuid": "c4acd073_c65b4338",
+      "revId": "a749f99c3f6012c70badcc288cf9d6a0851f6b94",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
