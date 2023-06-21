@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "51660e5a_2cff8092",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-06-21T11:57:35Z",
+      "side": 1,
+      "message": "rpm -qp --requires /DLRN/data/repos/component/common/a0/c3/a0c3ca8ce1f6c58069be4dfbe2bd19c33b526c6c_dev/python3-oslo-log+tests-5.2.0-0.20230621115152.a0c3ca8.el9.noarch.rpm\n((python3.9dist(eventlet) \u003c 0.32 or python3.9dist(eventlet) \u003e 0.32) with python3.9dist(eventlet) \u003e\u003d 0.30.1)\npython(abi) \u003d 3.9\npython3-oslo-log \u003d 5.2.0-0.20230621115152.a0c3ca8.el9\npython3.9dist(coverage) \u003e\u003d 4.5.1\npython3.9dist(fixtures) \u003e\u003d 3\npython3.9dist(oslotest) \u003e\u003d 3.3\npython3.9dist(pyinotify) \u003e\u003d 0.9.6\npython3.9dist(stestr) \u003e\u003d 2\npython3.9dist(testtools) \u003e\u003d 2.3\nrpmlib(CompressedFileNames) \u003c\u003d 3.0.4-1\nrpmlib(FileDigests) \u003c\u003d 4.6.0-1\nrpmlib(PartialHardlinkSets) \u003c\u003d 4.0.4-1\nrpmlib(PayloadFilesHavePrefix) \u003c\u003d 4.0-1\nrpmlib(PayloadIsZstd) \u003c\u003d 5.4.18-1\nrpmlib(RichDependencies) \u003c\u003d 4.12.0-1\nrpmlib(TildeInVersions) \u003c\u003d 4.10.0-1\n\nrpm -qp --obsoletes /DLRN/data/repos/component/common/a0/c3/a0c3ca8ce1f6c58069be4dfbe2bd19c33b526c6c_dev/python3-oslo-log+tests-5.2.0-0.20230621115152.a0c3ca8.el9.noarch.rpm\npython3-oslo-log-tests \u003c 5.2.0-0.20230621115152.a0c3ca8.el9\npython39-oslo-log+tests \u003c 5.2.0-0.20230621115152.a0c3ca8.el9\n\nrpm -qlp /DLRN/data/repos/component/common/a0/c3/a0c3ca8ce1f6c58069be4dfbe2bd19c33b526c6c_dev/python3-oslo-log+tests-5.2.0-0.20230621115152.a0c3ca8.el9.noarch.rpm\n/usr/lib/python3.9/site-packages/oslo.log-5.2.0.dev5.dist-info\n/usr/lib/python3.9/site-packages/oslo.log-5.2.0.dev5.dist-info/AUTHORS\n/usr/lib/python3.9/site-packages/oslo.log-5.2.0.dev5.dist-info/INSTALLER\n/usr/lib/python3.9/site-packages/oslo.log-5.2.0.dev5.dist-info/LICENSE\n/usr/lib/python3.9/site-packages/oslo.log-5.2.0.dev5.dist-info/METADATA\n/usr/lib/python3.9/site-packages/oslo.log-5.2.0.dev5.dist-info/WHEEL\n/usr/lib/python3.9/site-packages/oslo.log-5.2.0.dev5.dist-info/entry_points.txt\n/usr/lib/python3.9/site-packages/oslo.log-5.2.0.dev5.dist-info/pbr.json\n/usr/lib/python3.9/site-packages/oslo.log-5.2.0.dev5.dist-info/top_level.txt\n/usr/lib/python3.9/site-packages/oslo_log/tests\n[...]",
+      "revId": "fb37d4cc2bb5ee8d8989199f9f2778d97464f0f4",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
