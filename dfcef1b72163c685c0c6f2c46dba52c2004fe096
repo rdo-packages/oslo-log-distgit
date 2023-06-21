@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4798f037_8f75247d",
+        "filename": "python-oslo-log.spec",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-06-21T08:45:34Z",
+      "side": 1,
+      "message": "We can handle the conditionnal stuff in the upgrade_spec.sh script to just add the actual command that does the work",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 2
+      },
+      "revId": "dfcef1b72163c685c0c6f2c46dba52c2004fe096",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
