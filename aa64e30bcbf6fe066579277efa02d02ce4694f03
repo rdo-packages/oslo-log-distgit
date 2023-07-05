@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d61aad6b_ad28adba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-07-05T10:52:53Z",
+      "side": 1,
+      "message": "I\u0027m removing the patch in follow-up patch [1] in order to have same code base as Trunk for comparison jobs accuracy.\n\n[1] https://review.rdoproject.org/r/c/openstack/oslo-log-distgit/+/49163",
+      "revId": "aa64e30bcbf6fe066579277efa02d02ce4694f03",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
