@@ -29,11 +29,6 @@ Summary:        OpenStack Oslo Log library
 License:        Apache-2.0
 URL:            http://launchpad.net/oslo
 Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
-%if "%{version}" == "4.6.1"
-# TODO(jcapitao): patch to be removed once https://review.opendev.org/c/openstack/oslo.log/+/828017
-# is available in uc tag.
-Patch0001:      0001-Use-project-when-logging-the-user-identity.patch
-%endif
 # Required for tarball sources verification
 %if 0%{?sources_gpg} == 1
 Source101:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz.asc
