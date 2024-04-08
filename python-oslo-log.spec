@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x815AFEC729392386480E076DCC0DFE2D21C023C9
+%global sources_gpg_sign 0x2ef3fe0ec2b075ab7458b5f8b702b20b13df2318
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 # we are excluding some BRs from automatic generator
@@ -22,7 +22,7 @@ support for context specific logging (like resource id’s etc).
 Tests for the Oslo Log handling library.
 
 Name:           python-oslo-log
-Version:        5.3.0
+Version:        5.3.1
 Release:        1%{?dist}
 Summary:        OpenStack Oslo Log library
 
@@ -166,6 +166,9 @@ mv %{buildroot}%{python3_sitelib}/oslo_log/locale %{buildroot}%{_datadir}/locale
 %license LICENSE
 
 %changelog
+* Mon Apr 08 2024 RDO <dev@lists.rdoproject.org> 5.3.1-1
+- Update to 5.3.1
+
 * Mon Sep 25 2023 RDO <dev@lists.rdoproject.org> 5.3.0-1
 - Update to 5.3.0
 
