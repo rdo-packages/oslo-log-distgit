@@ -69,7 +69,6 @@ Documentation for the Oslo Log handling library.
 Summary:    Tests for the Oslo Log handling library
 
 Requires:       python3-%{pkg_name} = %{version}-%{release}
-Requires:       python3-mock
 Requires:       python3-oslotest
 Requires:       python3-oslo-config >= 2:5.2.0
 Requires:       python3-subunit
