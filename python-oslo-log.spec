@@ -176,3 +176,4 @@ rm -f oslo_log/tests/unit/test_pipe_mutex.py
 %license LICENSE
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/openstack/oslo.log/commit/910c33a14573bac552ebefbea5b81b174279a4b6
